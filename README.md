@@ -1,3 +1,3 @@
 # projeto_domino
-##Projeto Domino feito em C
-###BJPS
+## Projeto Domino feito em C
+### BJPS
