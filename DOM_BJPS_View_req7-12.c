@@ -3,9 +3,13 @@
 //SOMENTE AQUI podemos ter printf/scanf
 
 #include <stdio.h>
-#include "DOM_BJPS_View.h"
+#include "DOM_BJPS_View_req7-12.h"
 
 // REQ07: pergunta e valida a quantidade de jogadores (1 ou 2)
+// ATENCAO: cole aqui o corpo COMPLETO da funcao que ja esta em
+// DOM_BJPS_REQ07.c (o print so mostrou ate a linha 35). Mantenha a
+// assinatura abaixo (int definir_qtd_jogadores(void)) e o "return qtd;"
+// no final, dentro do do...while ja validado.
 int definir_qtd_jogadores(void) {
     int qtd;
     int valido = 0;
@@ -31,6 +35,7 @@ int definir_qtd_jogadores(void) {
         } else {
             valido = 1;
         }
+        // TODO: cole aqui o restante real do REQ07.c, se for diferente disso
     } while (!valido);
 
     return qtd;
@@ -61,4 +66,30 @@ void exibir_mesa(Mesa *mesa) {
         printf("\n(extremidades: %d e %d)\n", mesa->extremidade_esquerda, mesa->extremidade_direita);
     }
     printf("=============================================\n");
+}
+
+// Exibe o modo de jogo escolhido (usada pelo Projeto/Controller no lugar de
+// um printf direto - so a View pode ter printf)
+void exibir_modo_escolhido(int qtd_jogadores) {
+    printf("\nModo escolhido: %d jogador(es)\n", qtd_jogadores);
+}
+
+// REQ10: exibe qual jogador fara a primeira jogada
+void exibir_primeiro_jogador(char jogador) {
+    printf("\nO jogador %c fara a primeira jogada!\n", jogador);
+}
+
+// REQ11: exibe o resultado de uma tentativa de compra de peca
+void exibir_resultado_compra(PecaDomino pecas[], int indice_compra) {
+    if (indice_compra != -1) {
+        printf("Jogador 1 comprou [%d|%d]\n", pecas[indice_compra].lado_a, pecas[indice_compra].lado_b);
+    } else {
+        printf("Nao ha pecas disponiveis para comprar!\n");
+    }
+}
+
+// REQ12: exibe o resultado de um teste de jogada valida
+void exibir_teste_jogada_valida(PecaDomino peca, int valida) {
+    printf("Peca [%d|%d] valida na jogada testada? %s\n",
+           peca.lado_a, peca.lado_b, valida ? "SIM" : "NAO");
 }

@@ -3,7 +3,7 @@
 //NAO deve conter printf/scanf - so dados e regras do jogo, PORTANTO NAO DEVE E NAO SERA COMPILADO
 
 #include <stdlib.h>
-#include "DOM_BJPS_Model.h"
+#include "DOM_BJPS_Model_req7-12.h"
 
 // REQ01/REQ02: monta as 28 pecas do domino (0-0 ate 6-6), todas disponiveis
 void gerar_pecas(PecaDomino pecas[]) {
